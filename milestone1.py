@@ -2,16 +2,15 @@ import pandas as pd
 import re
 import string
 
-STOPWORDS={
-    "is","the","and","a","an","to","of","in","on","for","with","this","that","it","was","are","as","at","be","by","from","or","but"
+STOPWORDS={  "is","the","and","a","an","to","of","in","on","for","with","this","that","it","was","are","as","at","be","by","from","or","but"
 }
 def clean_text(text):
     text=str(text).lower()
     text=re.sub(r"http\S+","",text)
     text=re.sub(r"\d+","",text)
     text=text.translate(str.maketrans("","",string.punctuation))
-    text=re.sub(r"\s","",text).strip()
-    words=[W for W in text.split() if W not in STOPWORDS]
+    text=re.sub(r"\s+"," ",text).strip()
+    words = [w for w in text.split() if w not in STOPWORDS]
     return " ".join(words)
 
 def main():
@@ -40,6 +39,7 @@ def main():
     df.to_csv("MIlestone1_cleaned_feedback.csv",index=False)
     print("MIlestone1 completed successfully")
     print(df[["feedback","clean_feedback"]].head(10))
+
 if __name__=="__main__":
     main()
 
