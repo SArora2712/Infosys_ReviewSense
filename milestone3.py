@@ -1,12 +1,12 @@
 import pandas as pd
-from collections import Counter   #Counter(["good","bad","good"]) --->{'good':2,'bad':1}
+from collections import Counter                          #Counter(["good","bad","good"]) --->{'good':2,'bad':1}
 import re 
 
 # ------- Keyword Cleaning ----------
 def extract_keywords(text):
-    text=str(text).lower() 
-    text=re.sub(f"[^a-z\s]","",text)
-    words=text.split()
+    text=str(text).lower()                              #goood,Good,GOOD-
+    text=re.sub(rf"[^a-z\s]","",text)
+    words=text.split()                                     # good work it ->['good',"work"]
     return words
 
 #----- Main Execution -------
