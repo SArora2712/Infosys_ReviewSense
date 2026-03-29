@@ -6,3 +6,4 @@ seaborn
 wordcloud
 textblob
 nltk
+pillow>=11.0.0
