@@ -45,7 +45,7 @@ st.markdown(
 def load_data():
     df = pd.read_csv("Milestone2_Seniment_Results.csv")
     
-    # ←←← ADD THESE TWO LINES ←←←
+
     df["sentiment"] = df["sentiment"].str.lower().str.strip()
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     
@@ -55,7 +55,7 @@ def load_data():
 @st.cache_data
 def load_keywords():
     """Load keywords CSV, supporting both plain and marked formats."""
-    # first try reading as a normal CSV file
+    
     try:
         keywords_df = pd.read_csv("Milestone3_Keyword_Insights.csv")
         if "keyword" in keywords_df.columns and "frequency" in keywords_df.columns:
@@ -63,7 +63,7 @@ def load_keywords():
     except Exception:
         pass
 
-    # fallback: parse sections if the file contains markers
+    
     try:
         with open("Milestone3_Keyword_Insights.csv", "r", encoding="utf-8") as f:
             content = f.read()
