@@ -54,9 +54,7 @@ This project is an AI-based system to analyze customer feedback and extract usef
 <pip install -r requirements.txt>
 
 3. Run the app:
-<streamlit run final.py>
-or
-<python -m streamlit run final.py>
+<streamlit run final.py> or <python -m streamlit run final.py>
 
 
 ---
