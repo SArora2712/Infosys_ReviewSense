@@ -13,7 +13,7 @@ import numpy as np
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
     page_title="ReviewSense AI Platform",
-    page_icon="📊",
+    page_icon="",
     layout="wide"
 )
 
@@ -30,7 +30,7 @@ if "dark_mode" not in st.session_state:
     st.session_state.dark_mode = False
 
 # Toggle in sidebar
-st.sidebar.toggle("🌙 Dark Mode", key="dark_mode")
+st.sidebar.toggle(" Dark Mode", key="dark_mode")
 # ---------------- USERS (MULTI USER) ----------------
 users = {
     "admin": "admin123",
@@ -88,7 +88,7 @@ else:
     </style>
     """, unsafe_allow_html=True)
 # =====================================================
-# 🏠 HOME
+#  HOME
 # =====================================================
 if st.session_state.page == "home":
     st.markdown("""
@@ -164,7 +164,7 @@ body {
 
 
 # =====================================================
-# 🏠 HOMEPAGE (UPDATED PROFESSIONAL VERSION)
+#  HOMEPAGE (UPDATED PROFESSIONAL VERSION)
 # =====================================================
 if st.session_state.page == "home":
 
@@ -177,7 +177,7 @@ if st.session_state.page == "home":
         color: white;
         text-align: center;
     ">
-        <h1 style="font-size:3.8rem;">📊 ReviewSense AI Platform</h1>
+        <h1 style="font-size:3.8rem;"> ReviewSense AI Platform</h1>
         <p style="font-size:1.4rem;">
         Transform Customer Feedback into Actionable Intelligence
         </p>
@@ -196,7 +196,7 @@ if st.session_state.page == "home":
 
     with col1:
         st.markdown("""
-        <h2>🚧 The Problem</h2>
+        <h2> The Problem</h2>
         <ul>
         <li>Massive volumes of unstructured customer feedback</li>
         <li>Manual analysis is slow and inefficient</li>
@@ -224,7 +224,7 @@ if st.session_state.page == "home":
 
     with col2:
         st.markdown("""
-        <h2>💡 Our Solution</h2>
+        <h2> Our Solution</h2>
         <ul>
         <li>AI-powered sentiment analysis (real-time + batch)</li>
         <li>Keyword extraction & complaint detection</li>
@@ -237,7 +237,7 @@ if st.session_state.page == "home":
     st.write("")
 
     # ================= KEY FEATURES =================
-    st.markdown("## ✨ Key Features")
+    st.markdown("##  Key Features")
 
     col1, col2, col3, col4 = st.columns(4)
 
@@ -250,7 +250,7 @@ if st.session_state.page == "home":
             color:white;
             text-align:center;
         ">
-        💬 <b>Real-Time Feedback Analysis</b><br><br>
+         <b>Real-Time Feedback Analysis</b><br><br>
         Analyze individual feedback instantly with sentiment & insights
         </div>
         """, unsafe_allow_html=True)
@@ -264,7 +264,7 @@ if st.session_state.page == "home":
             color:white;
             text-align:center;
         ">
-        📂 <b>Dataset Intelligence</b><br><br>
+         <b>Dataset Intelligence</b><br><br>
         Upload datasets and perform automated exploratory analysis
         </div>
         """, unsafe_allow_html=True)
@@ -278,7 +278,7 @@ if st.session_state.page == "home":
             color:white;
             text-align:center;
         ">
-        📊 <b>Interactive Dashboard</b><br><br>
+         <b>Interactive Dashboard</b><br><br>
         Visualize trends, sentiment distribution, and product insights
         </div>
         """, unsafe_allow_html=True)
@@ -292,7 +292,7 @@ if st.session_state.page == "home":
             color:white;
             text-align:center;
         ">
-        🤖 <b>AI Insight Engine</b><br><br>
+         <b>AI Insight Engine</b><br><br>
         Generate business insights and smart recommendations
         </div>
         """, unsafe_allow_html=True)
@@ -302,12 +302,12 @@ if st.session_state.page == "home":
     # ================= OBJECTIVES =================
     st.markdown("""
     <div style="
-        background:white;
+        background: #5DCDE9;
         padding:30px;
         border-radius:15px;
         box-shadow:0 8px 25px rgba(0,0,0,0.08);
     ">
-    <h2>🎯 Objectives</h2>
+    <h2> Objectives</h2>
     <ul>
     <li>Automate analysis of large-scale customer feedback</li>
     <li>Provide real-time sentiment and emotion detection</li>
@@ -323,7 +323,7 @@ if st.session_state.page == "home":
     # ================= CTA =================
     st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
 
-    if st.button("🚀 Get Started"):
+    if st.button(" Get Started"):
         st.session_state.page = "login"
         st.rerun()
 
@@ -331,7 +331,7 @@ if st.session_state.page == "home":
    
 
 # =====================================================
-# 🔐 LOGIN
+#  LOGIN
 # =====================================================
 
 elif st.session_state.page == "login":
@@ -355,7 +355,7 @@ elif st.session_state.page == "login":
             background: linear-gradient(135deg, #667eea, #764ba2);
             box-shadow:0 15px 40px rgba(0,0,0,0.2);
         ">
-        <h3 style="color:white; text-align:center;">🔐 Login</h3>
+        <h3 style="color:white; text-align:center;"> Login</h3>
         """, unsafe_allow_html=True)
 
         with st.form("login"):
@@ -376,7 +376,7 @@ elif st.session_state.page == "login":
 
     st.markdown("</div>", unsafe_allow_html=True)
 # =====================================================
-# 📊 MAIN DASHBOARD AREA
+#  MAIN DASHBOARD AREA
 # =====================================================
 elif st.session_state.page == "dashboard":
 
@@ -390,19 +390,19 @@ elif st.session_state.page == "dashboard":
 
     menu = st.sidebar.radio(
         "Go to",
-        ["📊 Dashboard", "💬 Feedback Analyzer", "📂 Dataset Analyzer"]
+        [" Dashboard", " Feedback Analyzer", " Dataset Analyzer"]
     )
 
-    st.sidebar.markdown(f"👤 Logged in as: **{st.session_state.user}**")
+    st.sidebar.markdown(f" Logged in as: **{st.session_state.user}**")
 
-    if st.sidebar.button("🚪 Logout"):
+    if st.sidebar.button(" Logout"):
         st.session_state.clear()
         st.rerun()
 
     # =====================================================
-    # 📊 ORIGINAL DASHBOARD (UNCHANGED)
+    #  ORIGINAL DASHBOARD (UNCHANGED)
     # =====================================================
-    if menu == "📊 Dashboard":
+    if menu == " Dashboard":
         # ============================
 # ReviewSense – Milestone 4 (Enhanced & Fixed Final)
 # Interactive Customer Feedback Dashboard
@@ -412,7 +412,7 @@ elif st.session_state.page == "dashboard":
         # Page configuration
         st.set_page_config(
             page_title="ReviewSense Dashboard",
-            page_icon="📊",
+            page_icon="",
             layout="wide",
             initial_sidebar_state="expanded",
         )
@@ -428,7 +428,7 @@ elif st.session_state.page == "dashboard":
                 margin-bottom: 2rem;
                 }
                 .metric-card {
-                background-color: #f0f2f6;
+                background-color: #77CFE9;
                 padding: 1.5rem;
                 border-radius: 12px;
                 text-align: center;
@@ -484,7 +484,7 @@ elif st.session_state.page == "dashboard":
         keywords_df = load_keywords()
 
         # ── Sidebar Filters
-        st.sidebar.header("🔍 Filters")
+        st.sidebar.header(" Filters")
         # Sentiment
         sentiment_options = ["positive", "negative", "neutral"]
         sentiment_display = {"positive": "Positive", "negative": "Negative", "neutral": "Neutral"}
@@ -501,7 +501,7 @@ elif st.session_state.page == "dashboard":
             default=sorted(df["product"].unique()),
         )
         # Date range
-        st.sidebar.subheader("📅 Date Range")
+        st.sidebar.subheader(" Date Range")
         # Safe defaults
         if pd.notna(df["date"].min()):
             default_start = df["date"].min().date()
@@ -525,7 +525,7 @@ elif st.session_state.page == "dashboard":
 
         # ── Main Dashboard
         st.markdown(
-            '<h1 class="main-header">📊 ReviewSense – Customer Feedback Dashboard</h1>',
+            '<h1 class="main-header"> ReviewSense – Customer Feedback Dashboard</h1>',
             unsafe_allow_html=True,
         )
 
@@ -556,7 +556,7 @@ elif st.session_state.page == "dashboard":
             st.markdown("</div>", unsafe_allow_html=True)
 
         # ── Sentiment Distribution ──────────────────────────────────────────────────
-        st.subheader("😊 Sentiment Distribution")
+        st.subheader(" Sentiment Distribution")
         if not filtered_df.empty:
             fig1, ax1 = plt.subplots(figsize=(8, 5))
             counts = filtered_df["sentiment"].value_counts()
@@ -583,7 +583,7 @@ elif st.session_state.page == "dashboard":
             st.info("No data matches the selected filters.")
 
         # ── Product Sentiment ───────────────────────────────────────────────────────
-        st.subheader("📱 Product-wise Sentiment")
+        st.subheader(" Product-wise Sentiment")
         if not filtered_df.empty:
             product_sent = (
                 filtered_df.groupby("product")["sentiment"].value_counts().unstack(fill_value=0)
@@ -615,7 +615,7 @@ elif st.session_state.page == "dashboard":
             st.pyplot(fig_hm)
 
             # ── Trend Over Time ─────────────────────────────────────────────────────────
-            st.subheader("📈 Sentiment Trends Over Time")
+            st.subheader(" Sentiment Trends Over Time")
         if not filtered_df.empty:
             filtered_df["month"] = filtered_df["date"].dt.to_period("M")
             trend = filtered_df.groupby(["month", "sentiment"]).size().unstack(fill_value=0)
@@ -635,7 +635,7 @@ elif st.session_state.page == "dashboard":
             st.info("No date-based data available after filtering.")
 
         # ── Keywords ────────────────────────────────────────────────────────────────
-        st.subheader("🔑 Top Keywords & Word Cloud")
+        st.subheader(" Top Keywords & Word Cloud")
         if not keywords_df.empty:
             top10 = keywords_df.head(15)
             colA, colB = st.columns([3, 2])
@@ -658,7 +658,7 @@ elif st.session_state.page == "dashboard":
                     st.pyplot(fig_wc)
 
         # ── Confidence Score ────────────────────────────────────────────────────────
-        st.subheader("📊 Confidence Score Distribution")
+        st.subheader(" Confidence Score Distribution")
         if not filtered_df.empty:
             fig_hist, ax_hist = plt.subplots(figsize=(10, 5))
             ax_hist.hist(
@@ -674,13 +674,13 @@ elif st.session_state.page == "dashboard":
             st.pyplot(fig_hist)
 
         # ── Data & Download ─────────────────────────────────────────────────────────
-        with st.expander("📋 Preview Filtered Data (first 15 rows)"):
+        with st.expander(" Preview Filtered Data (first 15 rows)"):
             st.dataframe(filtered_df.head(15), use_container_width=True)
-        st.subheader("💾 Export Options")
+        st.subheader(" Export Options")
         col_dl1, col_dl2 = st.columns(2)
         with col_dl1:
             st.download_button(
-                "⬇️ Download Filtered Reviews",
+                " Download Filtered Reviews",
                 filtered_df.to_csv(index=False).encode("utf-8"),
                 "ReviewSense_Filtered_Reviews.csv",
                 "text/csv",
@@ -689,19 +689,19 @@ elif st.session_state.page == "dashboard":
         with col_dl2:
             if not keywords_df.empty:
                 st.download_button(
-                    "⬇️ Download Keyword List",
+                    " Download Keyword List",
                     keywords_df.to_csv(index=False).encode("utf-8"),
                     "ReviewSense_Keywords.csv",
                     "text/csv",
                     use_container_width=True,
                 )
-        st.success("✅ Dashboard ready! Use the sidebar to explore different views.")
+        st.success(" Dashboard ready! Use the sidebar to explore different views.")
 
 
     # =====================================================
-    # 💬 FEEDBACK ANALYZER
+    #  FEEDBACK ANALYZER
     # =====================================================
-    elif menu == "💬 Feedback Analyzer":
+    elif menu == " Feedback Analyzer":
 
         
         st.markdown("""
@@ -712,14 +712,14 @@ elif st.session_state.page == "dashboard":
             color:white;
             text-align:center;
         ">
-        <h2>💬 AI Feedback Intelligence</h2>
+        <h2> AI Feedback Intelligence</h2>
         <p>Understand what your customer is really saying</p>
         </div>
         """, unsafe_allow_html=True)
 
-        text = st.text_area("✍️ Enter customer feedback", height=150)
+        text = st.text_area(" Enter customer feedback", height=150)
 
-        if st.button("🚀 Analyze Feedback"):
+        if st.button(" Analyze Feedback"):
 
             if text.strip() != "":
                 from textblob import TextBlob
@@ -731,9 +731,9 @@ elif st.session_state.page == "dashboard":
                 sentiment = "Positive" if polarity > 0 else "Negative" if polarity < 0 else "Neutral"
 
                 # =========================
-                # 🎯 SENTIMENT GAUGE STYLE
+                #  SENTIMENT GAUGE STYLE
                 # =========================
-                st.subheader("📊 Sentiment Impact")
+                st.subheader(" Sentiment Impact")
 
                 progress = (polarity + 1) / 2  # scale -1 to 1 → 0 to 1
 
@@ -746,9 +746,9 @@ elif st.session_state.page == "dashboard":
                 """, unsafe_allow_html=True)
 
                 # =========================
-                # 🎨 GRADIENT BAR VISUAL
+                #  GRADIENT BAR VISUAL
                 # =========================
-                st.subheader("🎨 Sentiment Strength")
+                st.subheader(" Sentiment Strength")
 
                 fig, ax = plt.subplots(figsize=(6,1))
 
@@ -763,9 +763,9 @@ elif st.session_state.page == "dashboard":
                 st.pyplot(fig)
 
                 # =========================
-                # 🔑 WORD IMPORTANCE
+                #  WORD IMPORTANCE
                 # =========================
-                st.subheader("🔑 Key Drivers of Feedback")
+                st.subheader(" Key Drivers of Feedback")
 
                 words = re.findall(r'\b\w+\b', text.lower())
                 freq = pd.Series(words).value_counts().head(8)
@@ -776,9 +776,9 @@ elif st.session_state.page == "dashboard":
                 st.pyplot(fig2)
 
                 # =========================
-                # ☁️ WORD CLOUD
+                #  WORD CLOUD
                 # =========================
-                st.subheader("☁️ Feedback Focus Areas")
+                st.subheader(" Feedback Focus Areas")
 
                 wc = WordCloud(width=400, height=300, background_color="white").generate(text)
 
@@ -788,7 +788,7 @@ elif st.session_state.page == "dashboard":
                 st.pyplot(fig3)
 
                 # =========================
-                # 💡 AI INSIGHT
+                #  AI INSIGHT
                 # =========================
                 st.subheader("💡 Insight Summary")
 
@@ -804,9 +804,9 @@ elif st.session_state.page == "dashboard":
             else:
                 st.warning("Enter feedback")
     # =====================================================
-    # 📂 DATASET ANALYZER + Q&A
+    #  DATASET ANALYZER + Q&A
     # =====================================================
-    elif menu == "📂 Dataset Analyzer":
+    elif menu == " Dataset Analyzer":
 
         st.markdown("""
         <div style="
@@ -816,7 +816,7 @@ elif st.session_state.page == "dashboard":
             color:white;
             text-align:center;
         ">
-        <h2>📂 Dataset Intelligence Engine</h2>
+        <h2> Dataset Intelligence Engine</h2>
         <p>Visualize and understand your data instantly</p>
         </div>
         """, unsafe_allow_html=True)
@@ -827,7 +827,7 @@ elif st.session_state.page == "dashboard":
             df = pd.read_csv(file)
 
             # =========================
-            # 📊 DATA OVERVIEW CARDS
+            #  DATA OVERVIEW CARDS
             # =========================
             col1, col2, col3 = st.columns(3)
 
@@ -836,7 +836,7 @@ elif st.session_state.page == "dashboard":
             col3.metric("Missing", df.isnull().sum().sum())
 
             # =========================
-            # 📈 NUMERIC DISTRIBUTIONS
+            #  NUMERIC DISTRIBUTIONS
             # =========================
             numeric_cols = df.select_dtypes(include=np.number).columns
 
@@ -851,24 +851,24 @@ elif st.session_state.page == "dashboard":
                 st.pyplot(fig)
 
             # =========================
-            # 🔥 CORRELATION HEATMAP
+            #  CORRELATION HEATMAP
             # =========================
             if len(numeric_cols) > 1:
 
-                st.subheader("🔥 Feature Relationships")
+                st.subheader(" Feature Relationships")
 
                 fig2, ax2 = plt.subplots()
                 sns.heatmap(df[numeric_cols].corr(), annot=True, cmap="coolwarm", ax=ax2)
                 st.pyplot(fig2)
 
             # =========================
-            # 📊 CATEGORY ANALYSIS
+            #  CATEGORY ANALYSIS
             # =========================
             cat_cols = df.select_dtypes(include="object").columns
 
             if len(cat_cols) > 0:
 
-                st.subheader("📊 Category Insights")
+                st.subheader(" Category Insights")
 
                 selected_cat = st.selectbox("Choose category column", cat_cols)
 
@@ -887,13 +887,13 @@ elif st.session_state.page == "dashboard":
                     lambda x: TextBlob(str(x)).sentiment.polarity
                 )
 
-                st.subheader("😊 Sentiment Landscape")
+                st.subheader(" Sentiment Landscape")
 
                 fig3, ax3 = plt.subplots()
                 sns.histplot(df["sentiment"], bins=20, kde=True, ax=ax3)
                 st.pyplot(fig3)
 
                 # trend
-                st.subheader("📈 Sentiment Spread")
+                st.subheader(" Sentiment Spread")
 
                 st.line_chart(df["sentiment"])
