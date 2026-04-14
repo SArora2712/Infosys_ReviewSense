@@ -207,7 +207,7 @@ if st.session_state.page == "home":
 
     with col2:
         st.image(
-            "https://images.unsplash.com/photo-1556740749-887f6717d7e4",
+            "https://cdn.prod.website-files.com/689a09077ed36eb33a460037/68ded0237584df6db693c7bd_v2-11zn9g-8ob5q.jpeg",
             use_container_width=True
         )
 
