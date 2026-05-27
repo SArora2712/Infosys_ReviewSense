@@ -1,85 +1,72 @@
-# ReviewSense AI Platform
+# ReviewSense — Customer Feedback Analysis
 
-This project is an AI-based system to analyze customer feedback and extract useful insights. It allows users to input feedback or upload datasets and understand sentiment, patterns, and trends through visualizations.
-
----
-
-## Features
-
-### Feedback Analyzer
-- Takes user input feedback
-- Performs sentiment analysis (positive, negative, neutral)
-- Shows sentiment strength using visual indicators
-- Extracts important words from the feedback
-- Generates word cloud for better understanding
-
-### Dataset Analyzer
-- Upload CSV datasets
-- Shows data distributions and trends
-- Correlation heatmap for numeric features
-- Category-wise analysis
-- Automatic sentiment analysis if dataset contains reviews
-
-### Dashboard
-- Sentiment distribution overview
-- Product-wise analysis
-- Trend over time
-- Keyword insights
-- Confidence score visualization
-
-### UI
-- Simple and clean interface
-- Dark mode option
-- Gradient-based design
+NLP pipeline built during my internship at Infosys Springboard. Processes large-scale customer review datasets and extracts product-level sentiment trends, keyword patterns, and business insights.
 
 ---
 
-## Tech Stack
+## What it does
 
-- Python  
-- Streamlit  
-- Pandas, NumPy  
-- Matplotlib, Seaborn  
-- TextBlob  
-- WordCloud  
+Raw customer reviews are messy and unstructured. ReviewSense takes that raw text and turns it into something a product team or business analyst can actually use — sentiment scores by product, keyword frequency trends, and structured summaries organised by topic.
 
 ---
 
-## How to Run
+## Pipeline
 
-1. Clone the repository:
-<git clone https://github.com/SArora2712/Infosys_ReviewSense>
-
-2. Install dependencies:
-<pip install -r requirements.txt>
-
-3. Run the app:
-<streamlit run final.py> or <python -m streamlit run final.py>
-
-# Link
-https://infosysreviewsense-kttixyyygmttju5dtsrvmh.streamlit.app/
----
-
-## Project Purpose
-
-The goal of this project is to simplify customer feedback analysis and make it easier to understand large amounts of unstructured data using AI and visualization.
+```
+Raw reviews (CSV)
+      ↓
+Text preprocessing (lowercasing, stopword removal, lemmatisation)
+      ↓
+TF-IDF keyword extraction
+      ↓
+Sentiment scoring (per review + aggregated per product)
+      ↓
+Topic modelling (LDA)
+      ↓
+Structured BI report output
+```
 
 ---
 
-## Future Improvements
+## Tech stack
 
-- More accurate sentiment models
-- Aspect-based sentiment analysis
-- Better dataset querying system
-- Deployment with cloud integration
+| Component | Technology |
+|-----------|------------|
+| Text preprocessing | NLTK · regex |
+| Keyword extraction | TF-IDF (Scikit-learn) |
+| Sentiment analysis | VADER · custom scoring |
+| Topic modelling | LDA (Gensim) |
+| Data handling | Pandas · NumPy |
+| Output | Structured CSV + summary report |
 
 ---
 
-## Author
+## Run it
 
-Your Name  
-GitHub: https://github.com/SArora2712
+```bash
+git clone https://github.com/SArora2712/Infosys_ReviewSense.git
+cd Infosys_ReviewSense
+pip install -r requirements.txt
+python main.py --input data/reviews.csv --output results/
+```
 
+---
 
+## Sample output
 
+The pipeline produces:
+- Sentiment score per review (positive / negative / neutral)
+- Aggregated sentiment per product category
+- Top-N keywords per category using TF-IDF
+- Topic clusters with representative keywords
+- Summary report in structured format
 
+---
+
+## Internship context
+
+This was my core deliverable at Infosys Springboard. The goal was to give non-technical stakeholders a way to understand what customers were saying across thousands of reviews without reading them manually. The TF-IDF + sentiment approach works well for this — it's fast, interpretable, and doesn't need a GPU.
+
+---
+
+*Python · NLP · TF-IDF · Sentiment Analysis · Infosys Springboard Internship*
